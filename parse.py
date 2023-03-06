@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 Parses MySQL slow log files. Output is in CSV.
 
@@ -28,8 +28,7 @@ import sys
 pat = """^# Time: (?P<time>\d{2}\d{2}\d{2} \d{2}:\d{2}:\d{2}\s?)
 # User@Host: (?P<User_Host>.*?)\s?
 # Thread_id: (?P<Thread_id>.*?)\s+Schema: (?P<Schema>.*?)\s+Last_errno: (?P<Error_N>\d+)\s+Killed: (?P<Killed>\d+)\s?
-# Query_time: (?P<Query_time>\d+\.\d+)\s+Lock_time: (?P<Lock_time>\d+\.\d+)\s+Rows_sent: (?P<Rows_sent>\d+)\s+Rows_examined: (?P<Rows_examined>\d+)\s+Rows_affected: (?P<Rows_affected>\d+)\s+Rows_read: (?P<Rows_r
-ead>\d+)\s?
+# Query_time: (?P<Query_time>\d+\.\d+)\s+Lock_time: (?P<Lock_time>\d+\.\d+)\s+Rows_sent: (?P<Rows_sent>\d+)\s+Rows_examined: (?P<Rows_examined>\d+)\s+Rows_affected: (?P<Rows_affected>\d+)\s+Rows_read: (?P<Rows_read>\d+)\s?
 # Bytes_sent: (?P<Bytes_sent>\d+)\s?
 (?P<Query>[^#]+)#?$"""
 
